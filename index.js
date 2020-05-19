@@ -7,7 +7,9 @@ const app = express();
 // Load config
 require('dotenv').config();
 
-app.get('/', (req, res) => res.send('Hello'));
+app.get('/', (req, res) => {
+  res.send('YouTube Mp3 Streaming');
+});
 
 app.get('/search/:query', async (req, res) => {
   const { query } = req.params;
