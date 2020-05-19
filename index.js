@@ -7,6 +7,8 @@ const app = express();
 // Load config
 require('dotenv').config();
 
+app.get('/', (req, res) => res.send('Hello'));
+
 app.get('/search/:query', async (req, res) => {
   const { query } = req.params;
   const yt = new YouTube(process.env.YOUTUBE_APIKEY);
