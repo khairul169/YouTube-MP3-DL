@@ -1,0 +1,15 @@
+{
+  "name": "yt-mp3dl",
+  "version": "1.0.0",
+  "description": "Youtube Mp3 Downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mp3",
+    "dl"
+  ],
+  "author": "khairul169",
+  "license": "MIT"
+}
