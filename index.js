@@ -18,9 +18,9 @@ app.get('/search/:query', async (req, res) => {
     // Map result
     const result = videoList.results.map((video) => {
       const { id, title, thumbnails } = video;
-      const thumb = thumbnails.high ? thumbnails.high.url : thumbnails.default.url;
+      const thumbnail = thumbnails.high ? thumbnails.high.url : thumbnails.default.url;
 
-      return { id, title, thumb, thumbnails };
+      return { id, title, thumbnail, thumbnails };
     });
 
     res.json(result);
