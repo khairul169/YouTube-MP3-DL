@@ -4,8 +4,8 @@
   "description": "Youtube Mp3 Downloader",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "run": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "mp3",
