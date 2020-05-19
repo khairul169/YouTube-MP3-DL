@@ -7,7 +7,6 @@ const app = express();
 // Load config
 require('dotenv').config();
 
-
 app.get('/search/:query', async (req, res) => {
   const { query } = req.params;
   const yt = new YouTube(process.env.YOUTUBE_APIKEY);
@@ -21,17 +20,13 @@ app.get('/search/:query', async (req, res) => {
       const { id, title, thumbnails } = video;
       const thumb = thumbnails.default ? thumbnails.default.url : null;
 
-      return {
-        id,
-        title,
-        thumb
-      };
+      return { id, title, thumb };
     });
 
     res.json(result);
   } catch (err) {
     console.log(err);
-    res.json({ error: true });
+    res.json({ error: true }).status(500);
   }
 });
 
@@ -51,7 +46,7 @@ app.get('/get/:id', async (req, res) => {
     ytStream.pipe(res);
   } catch (err) {
     console.log(err);
-    res.send(err);
+    res.send(err).status(500);
   }
 });
 
